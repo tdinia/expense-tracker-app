@@ -8,8 +8,9 @@ const connectDB = require('./config/db');
 dotenv.config({ path: './config/config.env' });
 connectDB();
 
-// Init express server
+// App
 const app = express();
+app.use(express.json());
 
 const transactions = require('./routes/transactions');
 
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(
   PORT,
   console.log(
-    `Server started on ${process.env.NODE_ENV} mode on port: ${PORT}`.black.bgYellow
+    `Server started on ${process.env.NODE_ENV} mode on port: ${PORT}`.black
+      .bgYellow
   )
 );
