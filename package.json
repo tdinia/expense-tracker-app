@@ -1,7 +1,13 @@
 {
+  "name": "expense-tracker-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "client": "yarn --cwd ./client run start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "colors": "^1.4.0",
